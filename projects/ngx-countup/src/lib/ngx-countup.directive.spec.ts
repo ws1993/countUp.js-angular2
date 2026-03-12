@@ -145,12 +145,12 @@ describe('CountUpDirective', () => {
     });
   });
 
-  describe('scrollSpy', () => {
-    it('should not auto-animate when enableScrollSpy is true', () => {
+  describe('autoAnimate', () => {
+    it('should not immediately animate when autoAnimate is true', () => {
       const resetSpy = vi.fn();
       const startSpy = vi.fn();
 
-      component.options.set({ enableScrollSpy: true });
+      component.options.set({ autoAnimate: true });
       fixture.detectChanges();
 
       // Wait a bit to ensure animation didn't start

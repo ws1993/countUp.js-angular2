@@ -59,20 +59,12 @@ Note: The component is safe for server side rendering.
 
 - `complete`: emits when the animation completes
 
-### Scroll Spy!
+### Auto animate when element becomes visible
 
-Scroll spy means it will automatically start animating when the CountUp element scrolls into view. Enable it in the options:
-
-```html
-<h1 [countUp]="myEndVal" [countUpOptions]="{ enableScrollSpy: true }">0</h1>
-```
-
-### Defer animation
-
-You can defer animation by leaving the property holding the end value undefined. So for instance, you could declare `myEndVal` in your component and the animation won't start until `myEndVal` has a value.
+Use the autoAnimate option to animate when the element is scrolled into view or appears on screen.
 
 ```html
-<h1 [countUp]="myEndVal" [countUpOptions]="options">0</h1>
+<h1 [countUp]="myEndVal" [countUpOptions]="{ autoAnimate: true }">0</h1>
 ```
 
 ### Re-animate
@@ -83,13 +75,13 @@ To re-animate CountUp programmatically, add a template ref variable to the marku
 <h1 #countUp [countUp]="myEndVal" [countUpOptions]="myOpts">0</h1>
 ```
 
-Then, select it with `@ViewChild` in your component's Typescript file (using the template ref # you created).
+Then, select it with `@ViewChild` in your component's Typescript file (using the template ref you created).
 
 ```ts
   @ViewChild('countUp') countUp: CountUpDirective;
 ```
 
-Finally, call the animate function where needed.
+Then call the animate function where needed.
 
 ```ts
 this.countUp.animate();

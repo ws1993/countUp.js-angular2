@@ -23,7 +23,7 @@ export class App {
   endVal = 1000;
   endVal2 = 2000;
   opts: CountUpOptions = {
-    enableScrollSpy: true,
+    autoAnimate: true,
   };
 
   doThisOnComplete() {
